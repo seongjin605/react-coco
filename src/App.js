@@ -4,6 +4,8 @@ import { Button } from "./Button1";
 import { Button2 } from "./Button2";
 import { Button3 } from "./scss/Button3";
 import { Box } from "./Box1";
+import { Box4 } from "./components/Box4";
+import { DynamicBox4 } from "./components/DynamicBox4";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Button2 />
       <Button3 />
       <Box />
+      <Box4 />
+      <DynamicBox4 size="big" />
     </div>
   );
 }
