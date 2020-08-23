@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const BoxCommon = styled.div`
+const BoxCommon = styled.button`
   height: 50px;
-  background-color: #aaaaaa;
+  background-color: #0052cc;
+  color: #fff;
 `;
 
 const BoxBig = styled(BoxCommon)`
@@ -11,10 +12,10 @@ const BoxBig = styled(BoxCommon)`
 `;
 
 const BoxSmall = styled(BoxCommon)`
-  width: 200px;
+  width: 100px;
 `;
 
-export const Box4 = ({ size }) => {
+export const StaticButton = ({ size }) => {
   if (size === "big") {
     return <BoxBig>큰 박스</BoxBig>;
   }
