@@ -1,14 +1,16 @@
-import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import TodoList from "./TodoList";
-import { StaticButton } from "./components/StaticButton";
-import { DynamicBox } from "./components/DynamicBox";
-import Rooms from "./components/Rooms";
+import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import TodoList from './TodoList';
+import { StaticButton } from './components/StaticButton';
+import { DynamicBox } from './components/DynamicBox';
+import Rooms from './components/Rooms';
+import Like from './components/Like';
+// import UpdateSeconds from './components/UpdateSeconds';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div style={{ padding: 20, bordeor: "5px solid gray" }}>
+      <div style={{ padding: 20, bordeor: '5px solid gray' }}>
         <Link to="/">홈</Link>
         <br />
         <Link to="/photo">사진</Link>
@@ -22,6 +24,8 @@ export default function App() {
       <TodoList />
       <StaticButton size="small">page1</StaticButton>
       <DynamicBox size="big">page2</DynamicBox>
+      <Like />
+      {/* <UpdateSeconds /> */}
     </BrowserRouter>
   );
 }
