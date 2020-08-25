@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 let seconds = 0;
-function UpdateSeconds() {
+function UpdateComponents() {
   seconds += 1;
 
   const element = (
@@ -10,9 +10,9 @@ function UpdateSeconds() {
       <h2>지금까지 {seconds}초가 지났습니다.</h2>
     </div>
   );
-  return ReactDOM.render(element, document.getElementById('root'));
+  ReactDOM.render(element, document.getElementById('root'));
 }
 
-setInterval(UpdateSeconds, 1000);
-
-export default UpdateSeconds;
+export const startTimer = () => {
+  setInterval(UpdateComponents, 1000);
+};

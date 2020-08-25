@@ -5,7 +5,11 @@ import { StaticButton } from './components/StaticButton';
 import { DynamicBox } from './components/DynamicBox';
 import Rooms from './components/Rooms';
 import Like from './components/Like';
-// import UpdateSeconds from './components/UpdateSeconds';
+import Priority from './components/Priority';
+import Hook from './components/Hook';
+
+// import { startTimer } from './components/UpdateSeconds';
+//startTimer();
 
 export default function App() {
   return (
@@ -25,6 +29,8 @@ export default function App() {
       <StaticButton size="small">page1</StaticButton>
       <DynamicBox size="big">page2</DynamicBox>
       <Like />
+      <Priority title="리액트 스터디" desc="실전 리액트 프로그래밍" />
+      <Hook />
       {/* <UpdateSeconds /> */}
     </BrowserRouter>
   );
