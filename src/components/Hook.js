@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function CallHook() {
-  // const [count, setCount] = useState({ value: 0 });
+const API_URL = 'https://yts.mx/api/v2/list_movies.json';
+
+const Hook = ({ hello }) => {
   const [count, setCount] = useState(0);
-  function onClick() {
-    // setCount({ value: count.value + 1 });
-    // setCount({ value: count.value + 1 });
-    setCount(prev => prev + 1);
-    setCount(prev => prev + 1);
-  }
-  console.log('render called', count);
-  return (
-    <div>
-      <h2>{count.value}</h2>
-      <button onClick={onClick}>증가</button>
-    </div>
-  );
-}
 
-export default CallHook;
+  console.log('hello:', hello);
+  useEffect(() => {
+    const call = async () => {
+      const {
+        data: { data: movies = [] }
+      } = await axios.get(`${API_URL}?sort_by=rating`);
+      console.log(movies);
+    };
+
+    call();
+    document.title = `업데이트 횟수 ${count}`;
+  }, [hello]);
+  return <button onClick={() => setCount(count + 1)}>increase</button>;
+};
+
+export default Hook;

@@ -30,7 +30,7 @@ export default function App() {
       <DynamicBox size="big">page2</DynamicBox>
       <Like />
       <Priority title="리액트 스터디" desc="실전 리액트 프로그래밍" />
-      <Hook />
+      <Hook hello="kk" />
       {/* <UpdateSeconds /> */}
     </BrowserRouter>
   );
