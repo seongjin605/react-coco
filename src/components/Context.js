@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const UserContext = React.createContext('');
 
 function App() {
+  const [username, setUsername] = useState('');
   return (
     <div>
-      <UserContext.Provider value="mike">
-        <div>상단메뉴</div>
+      <UserContext.Provider value={username}>
         <Profile />
-        <div>하단메뉴</div>
       </UserContext.Provider>
+      <input type="text" value={username} onChange={e => setUsername(e.target.value)}></input>
     </div>
   );
 }
 
-function Profile() {
+const Profile = React.memo(() => {
   return (
     <div>
       <Greeting />
     </div>
   );
-}
+});
 
 function Greeting() {
   return (
