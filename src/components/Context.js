@@ -4,12 +4,20 @@ const UserContext = React.createContext('');
 
 function App() {
   const [username, setUsername] = useState('');
+  const inputRef = React.createRef();
+  console.log('inputRef:', inputRef);
   return (
     <div>
       <UserContext.Provider value={username}>
         <Profile />
       </UserContext.Provider>
-      <input type="text" value={username} onChange={e => setUsername(e.target.value)}></input>
+      <input
+        type="text"
+        value={username}
+        onChange={e => setUsername(e.target.value)}
+        ref={inputRef}
+      ></input>
+      <button onClick={() => inputRef.current.focus()}>포커스</button>
     </div>
   );
 }
